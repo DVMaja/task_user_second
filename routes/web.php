@@ -18,5 +18,29 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('welcome');
 });
+//Teszt útvonalak
+Route::get('/api/tasks', [TaskController::class, 'index']);
+Route::get('/api/tasks/{id}', [TaskController::class, 'show']);
+
+Route::post('/api/tasks', [TaskController::class, 'store']);
+
+Route::get('/api/users', [UserController::class,'index']);
+
+//ciew útvonalak következnek
+Route::get('/task/list', [TaskController::class, 'listView']);
+
+Route::get('/task/new', [TaskController::class, 'newView']);
+Route::get('/task/edit/{id}', [TaskController::class, 'editView']);
+
+
+//User útvonalak
+///api/users/{{$user->id}}
+
+Route::get('/api/users/', [UserController::class, 'index']);
+Route::get('/api/users/{{$user->id}}', [UserController::class, 'show']);
+
+
+
+
 
 //require __DIR__ . '/auth.php';
