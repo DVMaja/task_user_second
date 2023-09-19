@@ -38,6 +38,7 @@ Route::get('/task/edit/{id}', [TaskController::class, 'editView']);
 
 Route::get('/api/users/', [UserController::class, 'index']);
 Route::get('/api/users/{{$user->id}}', [UserController::class, 'show']);
+Route::get('/user/list', [UserController::class, 'listView']);
 
 
 
